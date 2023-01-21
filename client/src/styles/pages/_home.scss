@@ -1,0 +1,173 @@
+.home {
+    @include height100vh;
+    background-image: url(../../../public/assets/pictures/DreamAwayBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+        
+    &__layout {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        @include backdropBlur;
+    }
+
+    &__overview {
+        position: absolute;
+        z-index: 990;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+
+        &--logo {
+            height: 150px;
+            width: 250px;
+            margin: 0 auto;
+            margin-top: 2rem;
+            background-image: url(../../../public/assets/pictures/EximSoftwareLight.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        &--options {
+            margin-top: 5rem;
+            width: 500px;
+            position: relative;
+            
+            & .overview__options {
+                width: 100%;
+                height: 30%;
+                z-index: 10;
+                position: absolute;
+    
+                &--circle {
+                    height: 95px;
+                    width: 95px;
+                    background-color: rgba($color: $white, $alpha: .6);
+                    position: absolute;
+                    transition: all ease .2s;
+                    font-size: calc($normalSize - 2px);
+                    flex-direction: column;
+                    border-radius: 50%;
+                    & svg { fill: #383838e6; font-size: 30px; }
+                    color: #383838e6;
+    
+                    &.active-option {
+                        transform: scale(1.2);
+                        background-color: $white;
+                        box-shadow: 0 3px 4px 1px rgba(11, 11, 11, 0.2);
+                    }
+    
+                    &:hover {
+                        transform: scale(1.2);
+                        z-index: 8 !important;
+                        background-color: $white;
+                        & svg { fill: #383838; }
+                        color: #383838;
+                        box-shadow: 0 3px 4px 1px rgba(11, 11, 11, 0.2);
+                    }
+    
+                    &:hover ~ .active-option {
+                        transform: scale(1);
+                        background-color: rgba($color: $white, $alpha: .6);
+                        color: #383838e6;
+                        box-shadow: none;
+                    }
+
+                    &:nth-child(1) {
+                        top: 455px;
+                        left: 90px;
+                    }
+
+                    &:nth-child(2) {
+                        top: 335px;
+                        left: -45px;
+                    }
+
+
+                    &:nth-child(3) {
+                        top: 155px;
+                        left: -65px;
+                    }
+
+                    &:nth-child(4) {
+                        top: 10px;
+                        left: 10px;
+                    }
+
+                    &:nth-child(5) {
+                        top: 455px;
+                        left: 310px;
+                    }
+
+                    &:nth-child(6) {
+                        top: 10px;
+                        left: 390px;
+                    }
+
+                    &:nth-child(7) {
+                        top: 155px;
+                        left: 470px;
+                    }
+
+                    &:nth-child(8) {
+                        top: 335px;
+                        left: 440px;
+                    }
+
+                    &:nth-child(9) {
+                        top: -60px;
+                        left: 200px;
+                    }
+                }
+            }
+        }
+
+        & .overview__parent {
+            height: 500px;
+            width: 500px;
+            background-image: url(../../../public/assets/pictures/DreamAway.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            border-radius: none;
+            position: relative;
+
+            & .overview__placeholder {
+                position: absolute;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+                font-weight: $middleWeight;
+                font-size: $staticSize;
+                @supports (-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px)) {
+                    // background: linear-gradient(135deg) top left;
+                    -webkit-backdrop-filter: blur(5px);
+                    background-color: rgba($color-black, .5);
+                    backdrop-filter: blur(5px);
+                    background-blend-mode: screen;
+                }
+                top: 65%;
+                width: 100%;
+
+                p { text-align: center; width: 70%; }
+            }
+        }
+    }
+}

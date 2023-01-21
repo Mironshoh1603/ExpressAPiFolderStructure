@@ -1,0 +1,45 @@
+@mixin transition4s($transitionFor) {
+    transition: $transitionFor ease .4s;
+}
+
+@mixin transition3s($transitionFor) {
+    transition: $transitionFor ease .3s;
+}
+
+@mixin transition4sTwo($transition1, $transition2) {
+    transition: $transition1, $transition2 ease .4s;
+}
+
+@mixin transitionAll4s {
+    transition: all ease .4s;
+}
+
+@mixin height100vh {
+    height: 100vh
+}
+
+@mixin backdropBlur {
+    @supports (-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px)) {
+        -webkit-backdrop-filter: blur(5px);
+        background-color: rgba($color-black, .1);
+        backdrop-filter: blur(5px);
+    }
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == tablet {
+        @media only screen and (max-width: 65rem) { @content };
+    }
+    // @if $breakpoint == phone {
+    //     @media only screen and (max-width: 37.5em) { @content };    //600px
+    // }
+    // @if $breakpoint == tab-port {
+    //     @media only screen and (max-width: 56.25em) { @content };     //900px
+    // }
+    // @if $breakpoint == tab-land {
+    //     @media only screen and (max-width: 75em) { @content };    //1200px
+    // }
+    // @if $breakpoint == big-desktop {
+    //     @media only screen and (min-width: 112.5em) { @content };    //1800
+    // }
+}

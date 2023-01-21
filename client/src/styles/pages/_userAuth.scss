@@ -1,0 +1,176 @@
+.auth-user {
+    height: 100vh;
+
+    &__form {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        position: fixed;
+        background-image: 
+            linear-gradient(105deg, rgba(0, 66, 99, 1) 0%, rgba(8, 50, 71, .9) 50%, transparent 50%),
+            url(../../../public/assets/pictures/FLAirVisual.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+        width: 65rem;
+        z-index: 999;
+        padding: 4rem;
+        color: #fff;
+
+        &--group {
+            width: 50%; 
+            .form {
+                &__group {
+                    &--title {
+                        text-align: center;
+                        font-size: 2rem;
+                        font-weight: 500;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 1rem; 
+                    }
+                }
+
+                &__input {
+                    font-size: 1rem;
+                    font-family: inherit;
+                    color: inherit;
+                    padding: 1rem 2rem;
+                    border-radius: 2px;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border: none;
+                    border-bottom: 3px solid transparent;
+                    width: 90%;
+                    display: block;
+                    transition: all .3s; 
+                    
+                    &:focus {
+                        outline: none;
+                        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+                        border-bottom: 3px solid #53b436; 
+                    }
+
+                    &:focus:invalid {
+                        border-bottom: 3px solid #ef7c01; 
+                    }
+
+                    &::-webkit-input-placeholder {
+                        color: #e3e3e39c; 
+                  }
+                }
+
+                &__label {
+                    font-size: .8rem;
+                    font-weight: 500;
+                    margin-left: 2rem;
+                    margin-top: .7rem;
+                    display: block;
+                    transition: all .3s; 
+                    text-transform: capitalize;
+                }
+
+                &__submits {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    font-size: 1rem;
+
+                    &--button {
+                        height: 3rem;
+                        width: 7rem;
+                        border-radius: 3px;
+                        background-color: #ef7c01;
+                        border: none;
+                        cursor: pointer;
+                        transition: all ease .15s;
+                        font-size: 1rem;
+                        color: #fff;
+
+                        &:hover,
+                        &:active {
+                            background-color: #ef7c01f7;
+                        }
+                    }
+
+                    h4 {
+                        font-weight: 400;
+                        display: inline-block;
+                        margin: 0 auto;
+
+                        & a {
+                            text-decoration: none;
+                            color: #ef7c01;
+                        }
+                    }
+
+                    &--details {
+                        margin: 3rem 0 0 0;
+                        font-size: 1rem;
+                        * {
+                            font-weight: 400;
+                            color: #fff;
+                            text-decoration: none;
+                        }
+                    
+                        & a {
+                            color: #ef7c01;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__layout {
+        background-image: url(../../../public/assets/pictures/FLAirVisual.jpg);
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-filter: blur(15px);
+        filter: blur(15px);
+        position: fixed;
+    }
+}
+
+@media only screen and (max-width: 75em) {
+    .auth-user__form {
+        background-image: 
+            linear-gradient(105deg, rgba(0, 66, 99, 1) 0%, rgba(8, 50, 71, .9) 100%, transparent 50%),
+            url(../../../public/assets/pictures/CargoAirPortWorld.jpg);
+      background-size: cover; 
+      width: 45rem;
+    }
+
+    .auth-user__form--group {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 56.25em) {
+    .auth-user__form {
+        background-image: 
+            linear-gradient(105deg, rgba(0, 66, 99, 1) 0%, rgba(8, 50, 71, .9) 100%, transparent 50%),
+            url(../../../public/assets/pictures/CargoAirPortWorld.jpg);
+        width: 35rem;
+    }
+
+    .auth-user__form--group {
+        width: 100%;
+    }
+
+    .form__input {
+        width: 100%; 
+    } 
+}
+  
+.form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem); 
+}

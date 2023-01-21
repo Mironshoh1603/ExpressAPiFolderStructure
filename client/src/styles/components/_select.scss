@@ -1,0 +1,70 @@
+.content__submit {
+    margin-top: 1rem;
+
+    & h4 {
+        font-size: $normalSize;
+        font-weight: $middleWeight;
+    }
+
+    &--selection {
+        margin-top: .4rem;
+        border: 1px solid $color-blue;
+        border-radius: $borderRadius;
+
+        & .submit-selection, & .submit-upload {
+            width: 90%;
+            height: 40px;
+            * { 
+                border: none !important; 
+                font-size: $normalSize;
+                color: #9b9c9c;
+            }
+            & svg { display: none; }
+            &-selected * { color: #000; }
+        }
+
+        &:has(.submit-upload) {
+            background-color: $color-blue;
+            display: flex;
+            align-items: center;
+
+            & .submit-button { 
+                color: $white; 
+                & label {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .submit-upload {
+            width: 87%;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            margin-left: 1rem;
+            cursor: pointer;
+            &--label { color: $white; }
+            &--input { display: none; }
+            &--progress {
+                & p { color: $white; }
+            }
+        }
+    }
+}
+
+.submit-selection-item {
+    font-size: $normalSize !important;
+    font-weight: $middleWeight !important;
+    height: 40px !important;
+    background-color: transparent !important;
+    margin: 0 .3rem !important;
+    &:not(:last-child) {
+        border-bottom: 1px solid #00426310 !important;
+    }
+
+    &.item-disabled {
+        display: none !important;
+    }
+}

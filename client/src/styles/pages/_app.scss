@@ -1,0 +1,172 @@
+// APPLICATION STYLES
+.application {
+    // padding-right: 3rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--title {
+            font-weight: $middleWeight;
+            font-size: $middleSize;
+        }
+
+        //application__header--submit
+        &--submit {
+            background-color: #ef7c01 !important;
+            & svg {
+                margin: 0 .2rem;
+                font-size: $normalSize;
+                color: $white !important;
+            }
+        }
+
+        &--examples {
+            background-color: #455674cd !important;
+            opacity: .9;
+            & svg {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    // SUBMITS STYLES
+    &__submits {
+        margin-top: 15px;
+        background-color: $white;
+        border-radius: $borderRadius;
+        padding: 1.5rem;
+        @include transition4s(height);
+
+        &.submits-open {
+
+            & .response__preview {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    // REQUESTS STYLES
+    &__request {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        &--info {
+    
+            & .submission-info {
+                font-size: $juniorSize;
+                font-weight: $lighterWeight;
+            }
+    
+            & .submission-date {
+                margin-top: .5rem;
+                font-size: $normalSize;
+            }
+        }
+        
+        &--status {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            & .status-button {
+                &, &:hover { background-color: #f9f9f9; }
+                & svg { color: #a0a0a0; }
+                min-width: 40px !important;
+                width: 40px;
+                height: 40px;
+                min-width: 50px;
+                margin-left: 1rem;
+                padding: .7rem 0 !important;
+                @include transition4s(transform);
+
+                &-rotating {
+                    transform: rotate(-180deg);
+                }
+    
+                &--danger { background-color: #840100 !important; }
+                &--warning { background-color: #f39d18 !important; }
+                &--success { background-color: #53b436 !important; }
+                &--failed, &--waiting {
+                    background-color: #e7ebee;
+                    color: #383839 !important;
+                }
+            }
+        }
+    }
+
+    &__sandbox {
+        &--title {
+            font-size: $juniorSize  !important;
+        }
+        & .sandbox-text * {
+            font-size: $staticSize !important;
+        }
+    }
+}
+
+//DROPDOWNMENU STYLES
+.response__preview {
+    opacity: 0;
+    visibility: hidden;
+    font-size: $juniorSize;
+    font-weight: $lighterWeight;
+    // @include transition4s(opacity);
+    transition: all ease .4s;
+
+    &--response, &--comment {
+        background-color: #f9f9f9;
+        padding: 1rem;
+        border-radius: $borderRadius;
+        margin-top: .5rem;
+
+        & h3, & li, & p {
+            font-size: $staticSize;
+            font-weight: $middleWeight; 
+        }
+    }
+
+    &--response {
+        // RESPONSE RESPONSE
+        & .response-alert, & .response-comment {
+            font-size: $staticSize;
+            font-weight: $middleWeight; 
+
+            &::before {
+                content: "";
+                height: 12px;
+                width: 12px;
+                display: inline-block;
+                border-radius: 50%;
+                margin-right: 5px;
+            }
+
+            &.success::before { background-color: #53b436; }
+            &.danger::before { background-color: #dc0100; }
+            &.warning::before { background-color: #f39d18; }
+            &.failed::before { background-color: #dc0100; }
+
+            &--warnings {
+                list-style: none;
+    
+                & li {
+                    margin-top: .5rem;
+                }
+    
+                & .warning-subtitle {
+                    color: #000;
+                }
+            }
+        }
+    }
+    // RESPONSE COMMENT
+    &--comment {
+        & .response-comment {
+            &--message {
+                margin-top: 15px;
+            }
+        }
+    }
+}

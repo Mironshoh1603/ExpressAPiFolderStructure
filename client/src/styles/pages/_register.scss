@@ -1,0 +1,227 @@
+.register-user {
+
+    &__backdrop {
+        z-index: 9999;
+        & svg {
+            color: $color-orange;
+        }
+    }
+
+    height: 100vh;
+
+    &__form {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        position: fixed;
+        background-image: 
+            linear-gradient(280deg, rgba(0, 66, 99, 1) 0%, rgba(0, 66, 99, .8) 60%, transparent 55%),
+            url(../../../public/assets/pictures/DreamAway.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100%;
+        border-radius: 3px;
+        box-shadow: -50px -3rem 4rem rgba(0, 0, 0, 0.2) inset;
+        width: 65rem;
+        z-index: 9;
+        padding: 2rem 4rem;
+        color: #061f2c;
+
+        &--group {
+            width: 50%; 
+            margin-left: auto;
+            .form {
+                &__group {
+                    &--title {
+                        text-align: center;
+                        font-size: 2rem;
+                        font-weight: 500;
+                        margin-bottom: 1.5rem;
+                        color: #e1e1e1;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: .5rem; 
+                    }
+
+                    &--label {
+                        display: block;
+                        width: 100%;
+                        height: 3rem;
+                        background-color: rgba(255, 255, 255, 0.5);
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        padding-left: 1rem;
+                        border-radius: 3px;
+                        color: #fff;
+                        cursor: pointer;
+
+                        & span {
+                            background-color: #071f2c;
+                            padding: .5rem;
+                            margin-left: .5rem;
+                            border-radius: 3px;
+                            color: #fff;
+                            font-size: 15px;
+                        }
+
+                        &.bg-orange {
+                            background-color: #ef7c01;
+                        }
+                    }
+
+                    &--progress {
+                        padding: 0 1rem; 
+                        & p {
+                            color: #fff !important;
+                        }
+
+                        & span {
+                            background-color: #ef7c01;
+                        }
+                    }
+                }
+
+                &__input {
+                    font-size: 1rem;
+                    font-family: inherit;
+                    color: inherit;
+                    padding: 1rem 2rem;
+                    border-radius: 2px;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border: none;
+                    border-bottom: 3px solid transparent;
+                    width: 100%;
+                    display: block;
+                    transition: all .3s; 
+                    
+                    &:focus {
+                        outline: none;
+                        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+                        border-bottom: 3px solid #53b436; 
+                    }
+
+                    &:focus:invalid {
+                        border-bottom: 3px solid rgb(7, 39, 57); 
+                    }
+
+                    &::-webkit-input-placeholder {
+                        color: rgb(7, 39, 57); 
+                  }
+                }
+
+                &__label {
+                    font-size: .8rem;
+                    font-weight: 500;
+                    margin-left: 2rem;
+                    margin-top: .7rem;
+                    display: block;
+                    transition: all .3s; 
+                    text-transform: capitalize;
+                    color: #fff;
+                }
+
+                &__submits {
+                    margin-top: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    font-size: 1rem;
+
+                    &--button {
+                        height: 3rem;
+                        width: 100%;
+                        padding: 0 1.5rem;
+                        border-radius: 3px;
+                        background-color: #071822;
+                        border: none;
+                        cursor: pointer;
+                        transition: all ease .15s;
+                        font-size: 1rem;
+                        color: #fff;
+
+                        &:hover,
+                        &:active {
+                            background-color: #061f2c;
+                        }
+                    }
+
+                    h4 {
+                        font-weight: 400;
+                        display: inline-block;
+                        margin: 0 auto;
+
+                        & a {
+                            text-decoration: none;
+                            color: #ef7c01;
+                        }
+                    }
+
+                    &--details {
+                        margin: 3rem 0 0 0;
+                        font-size: 1rem;
+                        * {
+                            font-weight: 400;
+                            color: #fff;
+                            text-decoration: none;
+                        }
+                    
+                        & a {
+                            color: #ef7c01;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__layout {
+        background-image: 
+            linear-gradient(105deg, rgba(226, 226, 226, .5) 0%, rgba(226, 226, 226, .5) 100%, transparent 10%),
+            url(../../../public/assets/pictures/DreamAway.png);
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: fixed;
+    }
+}
+
+@media only screen and (max-width: 75em) {
+    .register-user__form {
+        background-image: 
+            linear-gradient(105deg, rgba(0, 66, 99, 1) 0%, rgba(0, 66, 99, .8) 100%, transparent 50%),
+            url(../../../public/assets/pictures/CargoAirPortWorld.jpg);
+      background-size: cover; 
+      width: 45rem;
+    }
+
+    .register-user__form--group {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 56.25em) {
+    .register-user__form {
+        background-image: 
+            linear-gradient(105deg, rgba(0, 66, 99, 1) 0%, rgba(0, 66, 99, .8) 100%, transparent 50%),
+            url(../../../public/assets/pictures/CargoAirPortWorld.jpg);
+        width: 35rem;
+    }
+
+    .register-user__form--group {
+        width: 100%;
+    }
+
+    .form__input {
+        width: 100%; 
+    } 
+}
+  
+.form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem); 
+}

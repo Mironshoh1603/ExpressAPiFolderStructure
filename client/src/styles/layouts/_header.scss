@@ -1,0 +1,58 @@
+// APP HEADER STYLES
+.app__header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - $drawerWidth);
+
+    @include respond(tablet) { width: 100%; }
+
+    background-color: #535c6b;
+    z-index: 990;
+}
+
+// APP NAVBAR STYLES
+.app__nav {
+    width: calc(100% - $drawerWidth);
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: flex-end;
+    padding: 1rem;
+
+    /* NAVBAR OPTIONS STYLES */
+    &--options {
+        // width: 280px;
+        // width: 55%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        * { color: #eee; }
+    }
+
+    &--notifications { 
+        margin-right: 1.5rem;
+    }
+
+    /* NAVBAR PROFILE STYLES */
+    &--profile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        /* PROFILE PHOTO STYLES */
+        &-photo { margin-right: .5rem; }
+
+        /* PROFILE NAME STYLES */
+        &-name {
+            display: inline-block;
+            font-weight: 500;
+            font-size: .8rem;
+            letter-spacing: 0.007em;
+            padding: 0 .5rem;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.form {
+
+    &__choice {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &--label {
+            position: relative;
+            padding-left: 1rem;
+            padding-right: 1.5rem;
+            cursor: pointer;
+
+            &::before {
+                position: absolute;
+                content: "";
+                height: 25px;
+                width: 25px;
+                border-radius: 5px;
+                border: 1px solid $color-blue;
+                transform: translateY(-50%) translateX(-50%);
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-size: 75%;
+                @include transition3s(background);
+            }
+
+            &.choice-label-active {
+                &::before {
+                    background-color: $color-blue;
+                    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
+                }
+            }
+        }
+
+        & input[type='checkbox'] {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}

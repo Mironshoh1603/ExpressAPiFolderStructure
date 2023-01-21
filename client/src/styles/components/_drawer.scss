@@ -1,0 +1,60 @@
+// DRAWER STYLES
+.drawer {
+    @include respond(tablet) {
+        display: none;
+        visibility: hidden;
+    }
+
+    font-size: $normalSize;
+    &--logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        height: 120px;
+        width: 200px;
+        cursor: pointer;
+        background-image: url(../../../public/assets/pictures/EximSoftware.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin: 0 auto;
+
+        // &-sample {
+        //     border-radius: 5px;
+        //     height: 100px;
+        //     width: 200px;
+        //     background-color: rgba(0, 0, 0, .1);
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+
+        //     &::after {
+        //         content: "Software Inc.";
+        //         opacity: .5;
+        //     }
+        // }
+    }
+
+    &--menubar {
+        margin-top: 1rem;
+    }
+
+    &--menu {
+        padding: .8rem .9rem;
+        border-radius: 10px;
+        list-style: none;
+        cursor: pointer;
+        transition: all, ease-in-out .15s;
+
+        &:hover { background-color: $color-blue-hover; }
+
+        & li:not(:last-child) {
+            // margin-bottom: .1rem;
+        }
+        
+        &.active-menu {
+            background-color: $color-blue;
+            color: $white;
+        }
+    }
+}

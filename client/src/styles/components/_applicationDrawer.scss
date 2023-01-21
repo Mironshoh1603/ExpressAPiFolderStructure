@@ -1,0 +1,67 @@
+.application__drawer {
+    @include height100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 991;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: flex-end;
+    transition: opacity, visibility, backdrop-filter, ease .4s;
+
+    &--open {
+        visibility: visible;
+        opacity: 1;
+        @include backdropBlur;
+    }
+
+    &--open &--layout { right: 0; }
+
+    // &--open &--close { right: $applicationDrawerWidth }
+
+    &--layout {
+        position: relative;
+        background-color: $white;
+        width: $applicationDrawerWidth;
+        right: -40%;
+        @include transition4s(right);
+
+        &.full-screen-drawer { width: 90%; }
+        &.middle-screen-drawer { width: 60%; }
+
+        @include respond (tablet) {
+            width: 90% !important;
+        }
+
+        // APPLICATION DRAWER CONTENT STYLES
+        &-content {
+            padding: 2rem;
+            overflow: scroll;
+            overflow-x: hidden;
+            @include height100vh;
+
+            & h3 {
+                font-size: $middleSize;
+                font-weight: $middleWeight;
+                margin-top: 1rem;
+                padding-bottom: .5rem;
+            }
+        }
+
+        // APPLICATION DRAWER CLOSE BUTTON STYLES
+        &-close {
+            top: 50px;
+            left: -34.5px;
+            position: absolute;
+            background-color: #ef7c01;
+            border-top-left-radius: $borderRadius;
+            border-bottom-left-radius: $borderRadius;
+            * { 
+                color: $white; 
+                font-size: $middleSize !important;
+            }
+        }
+    }
+}
