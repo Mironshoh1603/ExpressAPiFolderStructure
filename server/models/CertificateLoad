@@ -1,0 +1,23 @@
+const mongoose = require("mongoose");
+
+const CertificateLoadSchema = new mongoose.Schema(
+  {
+    code: {
+      type: String,
+      required: true,
+    },
+    text: {
+      type: String,
+    },
+    owner: {
+      type: String,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const CertificateLoad = mongoose.model("certificates", CertificateLoadSchema);
+
+module.exports = CertificateLoad;
